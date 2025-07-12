@@ -13,6 +13,7 @@
 #include "get_next_line.h"
 
 //it takes a string an returs its length when reach '\n' or '\0'
+// Andrei indicates I need to fix the or (I need to ask why)
 // menaing a new line or the end of file
 size_t	ft_strget(char *line)
 {
