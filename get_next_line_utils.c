@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
+//ft_memcpy- copy memory area.
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*csrc;
@@ -30,7 +30,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
+// ft_bzero write zeroes to a byte string.
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	relleno;
@@ -44,7 +44,19 @@ void	ft_bzero(void *s, size_t n)
 }
 
 // to mesaure
-size_t	ft_strlen(const char *s);
+size_t	ft_strlen(const char *s)
+{
+	size_t	d;
+
+	d = 0;
+	while (s[d] != '\0')
+		d++;
+	return (d);
+}
+
+
+
+
 //to copy or get 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strget(char *line);
