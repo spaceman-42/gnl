@@ -31,7 +31,18 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-void	ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	relleno;
+
+	relleno = 0;
+	while (relleno < n)
+	{
+		((char *)s)[relleno] = 0;
+		relleno++;
+	}
+}
+
 // to mesaure
 size_t	ft_strlen(const char *s);
 //to copy or get 
