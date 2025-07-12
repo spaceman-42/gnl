@@ -34,8 +34,16 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
 // to mesaure
 size_t	ft_strlen(const char *s);
-//to copy
+//to copy or get 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strget(char *line);
+//to cut 
+char	*ft_strtrim(char const *s1, char const *set)
+// to join: concatenate two strings into a new string (with malloc).
+char	*ft_strjoin(char *s1, char *s2, int *locate);
+// to control the lines
+char	*read_line(char *line, int *length);
+char	*ft_newline(char *line, char *stash, int *locate, int fd);
 //the main!
 int		main();
 
