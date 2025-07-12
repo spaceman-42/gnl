@@ -53,12 +53,27 @@ size_t	ft_strlen(const char *s)
 		d++;
 	return (d);
 }
-
-
-
-
 //to copy or get 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	len;
+	size_t	i;
+
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	len = 0;
+	while (src[len] != '\0')
+		++len;
+	i = 0;
+	while (src[i] != '\0' && i < (dstsize - 1))
+	{
+		dst[i] = src[i];
+		++i;
+	}
+	dst[i] = '\0';
+	return (len);
+}
+
 size_t	ft_strget(char *line);
 //to cut 
 char	*ft_strtrim(char const *s1, char const *set)
