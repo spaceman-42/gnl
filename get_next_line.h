@@ -19,7 +19,9 @@
 # ifndef BUFFER_SIZE
 # define BUFFER_SIZE 14
 # endif
-
+// Does your function work if it is BUFFER_SIZE is 9999 or 1000000? do you know why?:
+// here it is why we give the buffer a space beetwen 1 and 120k 
+# if BUFFER_SIZE < 1 || BUFFER_SIZE > 120000
 
 char *get_next_line(int fd);
 
