@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <unistd.h>
+# include <stdio.h>
 
 char *get_next_line(int fd)
 
@@ -22,5 +22,6 @@ char *get_next_line(int fd)
 // Funtion name as per subject
 // Funtion prototipe as per char *get_next_line(int fd)
 // We can use read, malloc and free
-// malloc is in stdlib.h
+// read  is in stdlib.h
+// malloc is in unistd.h
 // free is in stdlib.h
