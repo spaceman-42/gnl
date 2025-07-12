@@ -16,12 +16,20 @@
 # include <unistd.h>
 # include <stdio.h>
 
-char *get_next_line(int fd)
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 14
+# endif
 
+
+char *get_next_line(int fd);
+
+
+#endif
 
 // Funtion name as per subject
-// Funtion prototipe as per char *get_next_line(int fd)
-// We can use read, malloc and free
-// read  is in stdlib.h
-// malloc is in unistd.h
-// free is in stdlib.h
+// Funtion prototipe as per char *get_next_line(int fd), page 1
+// We can use read, malloc and free , page 1
+// read  is in stdlib.h , page 1, line 15
+// malloc is in unistd.h, page 1
+// free is in stdlib.h, page 1
+// we define BUFFER_SIZE as per subject request, page 6
