@@ -15,6 +15,7 @@
 //it takes a string an returs its length when reach '\n' or '\0'
 // Andrei indicates I need to fix the or (I need to ask why)
 // menaing a new line or the end of file
+// Remeber that I have set up the upper limit of BUFFER_SIZE to 120k
 size_t	ft_strget(char *line)
 {
   size_t i=0;
