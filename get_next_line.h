@@ -17,14 +17,25 @@
 # include <stdio.h>
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 14
+# define BUFFER_SIZE 5
 # endif
 // Does your function work if it is BUFFER_SIZE is 9999 or 1000000? do you know why?:
-// here it is why we give the buffer a space beetwen 1 and 120k 
-# if BUFFER_SIZE < 1 || BUFFER_SIZE > 120000
-
+// here it is why we give the buffer a space beetwen 1 and 12k 
+# if BUFFER_SIZE < 1 || BUFFER_SIZE > 12000
+#  undef BUFFER_SIZE
+#  define  BUFFER_SIZE 5
+# endif
+//here goes the prototype
 char *get_next_line(int fd);
+// now I have to add the fuctions from my libft
 
+// to manage memory
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	ft_bzero(void *s, size_t n);
+// to mesaure
+size_t	ft_strlen(const char *s);
+//
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 #endif
 
