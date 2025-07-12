@@ -30,6 +30,8 @@ size_t	ft_strget(char *line)
 	}
 	return (i);
 }
+// "if (!line)" and "return (-1);" is the control of page 6 
+
 char	*read_line(char *line, int *length)
 char	*ft_newline(char *line, char *stash, int *locate, int fd)
 
