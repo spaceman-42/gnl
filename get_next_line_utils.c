@@ -53,7 +53,7 @@ size_t	ft_strlen(const char *s)
 		d++;
 	return (d);
 }
-//to copy or get 
+//to copy or get ---- ft_strlcpy- size-bounded string copying.
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len;
@@ -74,9 +74,35 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (len);
 }
 
-size_t	ft_strget(char *line);
-//to cut 
-char	*ft_strtrim(char const *s1, char const *set)
+//to cut seems I can do it without this one
+// char	*ft_strtrim(char const *s1, char const *set)
 // to join: concatenate two strings into a new string (with malloc).
-char	*ft_strjoin(char *s1, char *s2, int *locate);
+char	*ft_strjoin(char *s1, char *s2, int *locate)
+{
+	int		i;
+	int		len1;
+	int		len2;
+	char	*s1s2;
+
+	if (s1 && s2)
+	{
+		len1 = ft_strlen(s1);
+		len2 = ft_strlen(s2);
+		s1s2 = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
+		if (s1s2 == NULL)
+			return (NULL);
+		i = -1;
+		while (s1[++i])
+			s1s2[i] = s1[i];
+		i = -1;
+		while (s2[++i])
+		{
+			s1s2[len1] = s2[i];
+			len1++;
+		}
+		s1s2[len1] = '\0';
+		return (s1s2);
+	}
+	return (NULL);
+}
 
