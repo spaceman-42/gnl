@@ -21,6 +21,7 @@
 # endif
 // Does your function work if it is BUFFER_SIZE is 9999 or 1000000? do you know why?:
 // here it is why we give the buffer a space beetwen 1 and 12k 
+//The limit of the buffer is set.
 # if BUFFER_SIZE < 1 || BUFFER_SIZE > 12000
 #  undef BUFFER_SIZE
 #  define  BUFFER_SIZE 5
