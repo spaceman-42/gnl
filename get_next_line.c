@@ -46,7 +46,7 @@ size_t	ft_strget(char *line)
 {
   size_t i;
 	
-  i = -1;
+  i = -1; //cambiamos de 0 a -1 para adapatr el cambio de i++ a ++i
     if (!line)
 		return (-1);
 	while (++i < BUFFER_SIZE)//hemos queidado el i++;
