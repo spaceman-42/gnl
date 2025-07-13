@@ -94,4 +94,22 @@ ssize_t	read_bytes;
 
 char	*get_next_line(int fd)
 {
+	static char	buffer[BUFFER_SIZE + 1];
+	char		*line;
+	int			bytes_line;	
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	bytes_line = -1;
+	line = read_line(buffer, &bytes_line);
+	if (!line)
+		return (NULL);
+	ft_strlcpy(buffer, &buffer[bytes_line + 1], BUFFER_SIZE + 1);
+	line = ft_newline(line, buffer, &bytes_line, fd);
+	if (!line || line[0] == '\0')
+	{
+		free(line);
+		return (NULL);
+	}
+	return (line);
 }
