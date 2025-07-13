@@ -29,8 +29,8 @@ char	*write_buffer(char *line, int *length)
 	stash = (char *)malloc((len + 1) * sizeof(char));
 	if (!stash)
 		return (NULL);
-	ft_memcpy(stash, line, len);
-	stash[len] = '\0';// aqui puede haber un error en la gestion stash
+	ft_memcpy(stash, line, len);// aqui puede haber un error en la gestion stash hay que poner un protecion antes de la linea siguiente
+	stash[len] = '\0';
 	if (len > 0 && stash[len - 1] == '\n')
 		*length = len - 1;
 	return (stash);
