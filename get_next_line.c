@@ -40,6 +40,8 @@ char	*read_line(char *line, int *length)
 // Andrei indicates I need to fix the or (I need to ask why)
 // menaing a new line or the end of file
 // Remeber that I have set up the upper limit of BUFFER_SIZE to 120k
+// "if (!line)" and "return (-1);" is the control of page 6 
+// this is the logical way to handle this behavoir.
 size_t	ft_strget(char *line)
 {
   size_t i;
@@ -55,11 +57,39 @@ size_t	ft_strget(char *line)
 	}
 	return (i);
 }
-// "if (!line)" and "return (-1);" is the control of page 6 
-// this is the logical way to handle this behavoir.
-
+// this takes a line, a buffer, a pointer to a integre (entero) to the line location
+// the fd file descriptor 
+//Get Next Line 42 | Part 1 https://www.youtube.com/watch?v=kR4FyNzVDBE
+// the expalins the FD on minute 2:50 as it is a record studio and
+// 0 records, 1 play the sound and 2 give a warning
 char	*ft_newline(char *line, char *stash, int *locate, int fd)
 {
+ssize_t	read_bytes;
+	size_t	line_len;
+	char	buffer[BUFFER_SIZE + 1];
+
+	while (*locate == -1)
+	{
+		ft_bzero(buffer, (BUFFER_SIZE + 1));
+		read_bytes = read(fd, buffer, BUFFER_SIZE);
+		if (read_bytes == -1)
+		{
+			free(line);
+			ft_bzero(stash, (BUFFER_SIZE + 1));
+			return (NULL);
+		}
+		line_len = ft_strget(buffer);
+		ft_strlcpy_get(stash, &buffer[line_len], (BUFFER_SIZE + 1));
+		buffer[line_len] = '\0';
+		line = ft_strjoin_get(line, buffer, locate);
+		if (read_bytes == 0)
+		{
+			ft_bzero(stash, BUFFER_SIZE + 1);
+			break ;
+		}
+	}
+	return (line);
+	
 }
 
 char	*get_next_line(int fd)
