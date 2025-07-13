@@ -43,7 +43,7 @@ size_t	ft_strget(char *line);
 // to join: concatenate two strings into a new string (with malloc).
 char	*ft_strjoin(char *s1, char *s2, int *locate);
 // to control the lines
-char	*read_line(char *line, int *length);
+char	*write_buffer(char *line, int *length);
 char	*ft_newline(char *line, char *stash, int *locate, int fd);
 //the main!
 int		main();
