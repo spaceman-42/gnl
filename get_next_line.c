@@ -79,7 +79,7 @@ ssize_t	read_bytes;
 			return (NULL);
 		}
 		line_len = ft_strget(buffer);
-		ft_strlcpy_get(stash, &buffer[line_len], (BUFFER_SIZE + 1));
+		ft_strlcpy(stash, &buffer[line_len], (BUFFER_SIZE + 1));
 		buffer[line_len] = '\0';
 		line = ft_strjoin(line, buffer, locate);
 		if (read_bytes == 0)
