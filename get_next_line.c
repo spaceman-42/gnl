@@ -16,7 +16,7 @@
 // when it has not reached the end of the line
 // WARNING if (len > 0 && stash[len - 1] == '\n') no if (len > 0 || stash[len - 1] == '\n')
 // when it has not reached the end of the line
-char	*read_line(char *line, int *length)
+char	*write_buffer(char *line, int *length)
 {
 	
 	char	*stash;
@@ -101,7 +101,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	bytes_line = -1;
-	line = read_line(buffer, &bytes_line);
+	line = write_buffer(buffer, &bytes_line);
 	if (!line)
 		return (NULL);
 	ft_strlcpy(buffer, &buffer[bytes_line + 1], BUFFER_SIZE + 1);
