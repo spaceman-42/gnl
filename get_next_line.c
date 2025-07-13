@@ -20,9 +20,8 @@ size_t	ft_strget(char *line)
 {
   size_t i;
 	
-  i=0;
-  
-  if (!line)
+  i = 0;
+    if (!line)
 		return (-1);
 	while (i < BUFFER_SIZE)
 	{
