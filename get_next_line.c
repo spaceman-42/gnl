@@ -18,7 +18,7 @@
 // Remeber that I have set up the upper limit of BUFFER_SIZE to 120k
 size_t	ft_strget(char *line)
 {
-  size_t i
+  size_t i;
 	
   i=0;
   
