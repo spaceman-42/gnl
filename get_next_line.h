@@ -17,7 +17,7 @@
 # include <stdio.h>
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 5
+#  define BUFFER_SIZE 5
 # endif
 // Does your function work if it is BUFFER_SIZE is 9999 or 1000000? do you know why?:
 // here it is why we give the buffer a space beetwen 1 and 12k 
