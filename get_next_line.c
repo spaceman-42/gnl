@@ -30,7 +30,7 @@ char	*write_buffer(char *line, int *length)
 	if (!stash)
 		return (NULL);
 	ft_memcpy(stash, line, len);
-	stash[len] = '\0';
+	stash[len] = '\0';// aqui puede haber un error en la gestion stash
 	if (len > 0 && stash[len - 1] == '\n')
 		*length = len - 1;
 	return (stash);
