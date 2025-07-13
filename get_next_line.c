@@ -46,14 +46,14 @@ size_t	ft_strget(char *line)
 {
   size_t i;
 	
-  i = 0;
+  i = -1;
     if (!line)
 		return (-1);
-	while (i < BUFFER_SIZE)
+	while (++i < BUFFER_SIZE)//hemos queidado el i++;
 	{
 		if (line[i] == '\n' || line[i] == '\0')
 			return (i + 1);
-		i++;
+		//i++;
 	}
 	return (i);
 }
