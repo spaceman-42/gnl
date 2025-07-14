@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <fcntl.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
@@ -57,3 +58,4 @@ int		main();
 // malloc is in unistd.h, page 1
 // free is in stdlib.h, page 1
 // we define BUFFER_SIZE as per subject request, page 6
+// I forgot the library for open #include <fcntl.h>

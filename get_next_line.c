@@ -64,7 +64,7 @@ size_t	ft_strget(char *line)
 // 0 records, 1 play the sound and 2 give a warning
 char	*ft_newline(char *line, char *stash, int *locate, int fd)
 {
-ssize_t	read_bytes;
+	ssize_t	read_bytes;
 	size_t	line_len;
 	char	buffer[BUFFER_SIZE + 1];
 
@@ -89,7 +89,6 @@ ssize_t	read_bytes;
 		}
 	}
 	return (line);
-	
 }
 
 char	*get_next_line(int fd)
@@ -113,3 +112,22 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
+/*
+int	main(void)
+{
+	char	*line;
+	int		fd;
+
+	fd = open("prueba.txt", O_RDONLY);
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
+		printf("%s", line);
+		free (line);
+		//important to free the line
+	}
+	close (fd);// this will close the file because the fd it is the closing
+	return (0);
+}*/
