@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                                    :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jadiaz-b <jadiaz-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -30,6 +30,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+
 // ft_bzero write zeroes to a byte string.
 void	ft_bzero(void *s, size_t n)
 {
@@ -53,6 +54,7 @@ size_t	ft_strlen(const char *s)
 		d++;
 	return (d);
 }
+
 //to copy or get ---- ft_strlcpy- size-bounded string copying.
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

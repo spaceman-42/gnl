@@ -20,15 +20,13 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
 # endif
-// Does your function work if it is BUFFER_SIZE is 9999 or 1000000? do you know why?:
-// here it is why we give the buffer a space beetwen 1 and 12k 
-//The limit of the buffer is set.
+
 # if BUFFER_SIZE < 1 || BUFFER_SIZE > 12000
 #  undef BUFFER_SIZE
-#  define  BUFFER_SIZE 5
+#  define BUFFER_SIZE 5
 # endif
-//here goes the prototype
-char *get_next_line(int fd);
+
+char	*get_next_line(int fd);
 // now I have to add the fuctions from my libft
 
 // to manage memory
@@ -46,12 +44,10 @@ char	*ft_strjoin(char *s1, char *s2, int *locate);
 // to control the lines
 char	*write_buffer(char *line, int *length);
 char	*ft_newline(char *line, char *stash, int *locate, int fd);
-//the main!
-int		main();
 
 #endif
 
-// Funtion name as per subject
+/* Funtion name as per subject
 // Funtion prototipe as per char *get_next_line(int fd), page 1
 // We can use read, malloc and free , page 1
 // read  is in stdlib.h , page 1, line 15
@@ -59,3 +55,11 @@ int		main();
 // free is in stdlib.h, page 1
 // we define BUFFER_SIZE as per subject request, page 6
 // I forgot the library for open #include <fcntl.h>
+line 23 // Does your function work if it is 
+BUFFER_SIZE is 9999 or 1000000? do you know why?:
+// here it is why we give the buffer a space beetwen 1 and 12k 
+//The limit of the buffer is set.
+
+line 28 //here goes the prototype
+//the main!
+int		main();*/
